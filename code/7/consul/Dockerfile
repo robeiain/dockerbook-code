@@ -1,11 +1,11 @@
 FROM ubuntu:18.04
-LABEL maintainer="james@example.com"
-ENV REFRESHED_AT 2014-08-01
+LABEL maintainer="tim@example.com"
+ENV REFRESHED_AT 2021-01-03
 
 RUN apt-get -qq update
 RUN apt-get -qq install curl unzip
 
-ADD https://releases.hashicorp.com/consul/0.3.1/consul_0.3.1_linux_amd64.zip /tmp/consul.zip
+ADD https://releases.hashicorp.com/consul/1.9.0/consul_1.9.0_linux_amd64.zip /tmp/consul.zip
 RUN cd /usr/sbin && unzip /tmp/consul.zip && chmod +x /usr/sbin/consul && rm /tmp/consul.zip
 ADD consul.json /config/
 
